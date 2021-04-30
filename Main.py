@@ -43,8 +43,8 @@ class Minesweeper:
 
     def readLocation(self):
         while True:
-            done = input('Type Quit if you would like to save and Quit: ')
-            if done == 'Quit':
+            done = input('Type Qs if you would like to save and Quit or Q if you would like to quit without saving: ')
+            if done == 'Qs':
                 print('Thanks for Playing!')
                 with open("savegame.txt", "w") as f:
                     if self.width < 10: 
@@ -61,6 +61,9 @@ class Minesweeper:
                     f.write(' ')
                     f.write(str(self.minefield))
                     exit()
+            if done = 'Q':
+                print('Thanks For Playing')
+                exit()
             s = input('Enter {[column][row]} in 4 digits ex: 0105: ')
             if len(s) != 4:
                 print('ERROR: Only 4 digits allowed')
